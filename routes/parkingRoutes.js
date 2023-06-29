@@ -1,16 +1,18 @@
 import express from "express";
-import ParkingEntrance from "../controller/parkingController.js";
+import EntryController from "../controller/parkingController.js";
 
 const router = express.Router();
 
-router.get("/estacionamento", ParkingEntrance.listEntry);
+router.get("/estacionamento", EntryController.listEntry);
 
-router.get("/estacionamento/:id", ParkingEntrance.listIdEntry);
+router.get("/estacionamento/:id", EntryController.listIdEntry);
 
-router.post("/estacionamento", ParkingEntrance.registerEntry);
+router.post("/estacionamento", EntryController.registerEntry);
 
-router.put("/estacionamento/:id", ParkingEntrance.updateEntry);
+router.put("/estacionamento/exit/:id", EntryController.registerExit);
 
-router.delete("/estacionamento/:id", ParkingEntrance.deleteEntry);
+router.put("/estacionamento/:id", EntryController.updateEntry);
+
+router.delete("/estacionamento/:id", EntryController.deleteEntry);
 
 export default router;
