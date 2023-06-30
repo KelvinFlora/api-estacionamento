@@ -2,7 +2,7 @@ import mongoose from "mongoose";
 
 const ParkingInfo = new mongoose.Schema({
   licenseplate: { type: String, required: true },
-  entrytime: { type: Date, required: true },
+  entrytime: { type: Date },
   exittime: { type: Date },
   carname: { type: String, required: true },
   totalTime: { type: Number },

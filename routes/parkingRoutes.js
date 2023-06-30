@@ -9,7 +9,9 @@ router.get("/estacionamento/:id", EntryController.listIdEntry);
 
 router.post("/estacionamento", EntryController.registerEntry);
 
-router.put("/estacionamento/exit/:id", EntryController.registerExit);
+router.put("/estacionamento/entrada/:id")
+
+router.put("/estacionamento/saida/:id", EntryController.updateExit);
 
 router.put("/estacionamento/:id", EntryController.updateEntry);
 
