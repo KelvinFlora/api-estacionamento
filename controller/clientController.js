@@ -43,7 +43,7 @@ class ClientController {
 
     static updateClient = async (req, res) => {
         const id = req.params.id;
-        const data = req.body.data;
+        const data = req.body;
         try {
             const result = await ClientData.updateOne( {_id: id}, data)
             if (result) {
@@ -59,8 +59,8 @@ class ClientController {
     static deleteClient = async (req, res) => {
         const id = req.params.id;
         try {
-            const result = await ClientData.deleteOne(id)
-            if (result) {
+            const result = await ClientData.deleteOne(id);
+            if (result.length > 0) {
                 res.status(201).json({ message: "As informações do cliente foram apagadas com sucesso!"})
             } else {
                 res.status(400).json({ messag: "Não foi possível apagar as informações do cliente!"})
